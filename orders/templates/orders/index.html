@@ -10,7 +10,7 @@
 <!-- NAVBAR -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-    <div class="container-fluid">
+    <div class="container-xxl">
         <a class="navbar-brand" href="#">Abel</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
 
 <!-- intro section -->
 
-<section id="intro" class="bg-dark">
+<section id="intro" class="bg-dark m-5 p-5">
     <div class="container-lg">
         <div class="row g-4 justify-content-center align-items-center">
             <div class="col-md-5 text-center text-md-start">
@@ -71,21 +71,22 @@
 
 
 
-<section id="intro" class="bg-dark">
+<section id="intro" class="bg-secondary m-4">
     <div class="container-fluid">
-        <h1 class="display-4 text-white text-center">Our Menu</h1>
-        <div class="row justify-content-center my-5">
+        <h1 class="display-4 text-white text-center mb-4">Our Menu</h1>
+        <!-- <h1 class="display-5 text-white text-center">Foods</h1> -->
+        <div class="row justify-content-center g-4 mb-5">
             {% for food in  foods %}
-            <div class="col-8 col-md-6 col-lg-3">
+            <div class="col-8 col-md-6 col-lg-3 mb-5">
                 
-                <div class="card border-2 h-100 border-secondary text-center bg-dark">
+                <div class="card mb-5 border-2 border-outline-secondary h-100  text-center bg-dark">
                     <div class="card-body h-100 text-light ">
                         <div class="hello"><img src="{{food.picture}}" alt="" class="img-fluid"></div>
                         
                         <h4 class="card-title text-light">{{food.name}}</h4>
                         <p class="card-subtitle  lead ">Order Our Delicious Foods </p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="btn  btn-outline-warning">View Foods</button>
+                        <button class="btn  btn-outline-warning">Order</button>
             
 
 
@@ -98,14 +99,112 @@
             {% endfor %}
             
         </div>
-    </div>
-
-
-
 
 
 
 </section>
+
+
+
+<!-- about us section -->
+
+
+    <!-- <div class="container ">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-6 text-light">
+                <h1 class="display-4">About us page</h1>
+                <p class="lead text-muted mb-0">Create a minimal about us page using Bootstrap 4.</p>
+                <p class="lead text-muted">Snippet by <a href="https://bootstrapious.com/snippets" class="text-muted">
+                        <u>Bootstrapious</u></a>
+                </p>
+            </div>
+            <div class="col-lg-6 text-light">
+                <div class="card cards border-2 bg-dark">
+                    <h1 class="display-5">come see us</h1>
+                    <img src="{% static 'restaurant.jpg' %}" alt="couldn't find" class="img-fluid">
+                    <div class="content">
+                        <h2>Card One</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin
+                            leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo
+                            volutpat ac sed dolor.</p>
+                    </div>
+
+                </div>
+              
+            </div>
+        </div> -->
+
+            <h1 class="display-3 text-light text-center" >Our Staffs</h1>
+          <div class="container d-flex align-items-center justify-content-center position-relative flex-wrap">
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer'>
+                        <img
+                            src="{% static 'chief1.jpg' %}" >
+                    </div>
+                    <div class="content">
+                        <h2>Samuel Gezhagn</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin
+                            leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo
+                            volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer'>
+                        <img
+                            src="{% static 'chief2.jpg' %}">
+                    </div>
+                    <div class="content">
+                        <h2>Yenesew Tamrat</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin
+                            leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo
+                            volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+                <div class="card d-flex position-relative flex-column">
+                    <div class='imgContainer'>
+                        <img
+                             src="{% static 'chief1.jpg' %}">
+                    </div>
+                    <div class="content">
+                        <h2> Mariana Temesgen</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin
+                            leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo
+                            volutpat ac sed dolor.</p>
+                    </div>
+                </div>
+            </div>
+    
+
+
+    
+
+
+            
+
+  
+
+
+
+
+<!-- end of about us section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

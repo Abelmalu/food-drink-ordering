@@ -39,6 +39,7 @@ class Drink(models.Model):
     name=models.CharField(max_length=255)
     size = models.CharField(max_length=255)
     category = models.CharField(max_length=255, choices=CATEGORY )
+    picture = models.ImageField(null=True)
 
     def __str__(self) -> str:
         return self.name
