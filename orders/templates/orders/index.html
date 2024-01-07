@@ -66,9 +66,35 @@
                     <div class="display-5 text-muted"> In Jimma</div>
                 </h1>
                 <p class="lead my-4 text-light">24 hours open to serve your orders or come and visit us!</p>
-                <a href="#pricing" class="btn btn-outline-warning btn-lg m-3">Order Now</a>
+                <a href="#pricing" class="btn btn-outline-warning btn-lg m-3 " data-bs-toggle="modal" data-bs-target="#reg-modal">Order Now</a>
                 
             </div>
+
+<!-- Modal -->
+<div class="modal fade " id="reg-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Orders</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center m-3">
+
+              
+             
+               <h4 class="display-5 m-3">what do you want to order?</h4>
+               <a href=""><button class="btn btn-danger btn-lg">Food</button></a>
+                <a href=""><button class="btn btn-danger btn-lg">Drink</button></a>
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Close</button>
+               
+            </div>
+        </div>
+    </div>
+</div> 
+<!-- modal ends here -->
             <div class="col-md-7">
                 <img src="{% static 'savior5.png' %}" class=" img-fluid " alt="couldn't found the image ">
             </div>
@@ -81,7 +107,7 @@
 
 
 
-<section id="intro" class="bg-secondary m-4">
+<section id="" class="bg-secondary m-4">
     <div class="container-fluid">
         <h1 class="display-4 text-white text-center mb-4">Our Menu</h1>
         <!-- <h1 class="display-5 text-white text-center">Foods</h1> -->
@@ -119,30 +145,7 @@
 <!-- about us section -->
 
 
-    <!-- <div class="container ">
-        <div class="row h-100 align-items-center">
-            <div class="col-lg-6 text-light">
-                <h1 class="display-4">About us page</h1>
-                <p class="lead text-muted mb-0">Create a minimal about us page using Bootstrap 4.</p>
-                <p class="lead text-muted">Snippet by <a href="https://bootstrapious.com/snippets" class="text-muted">
-                        <u>Bootstrapious</u></a>
-                </p>
-            </div>
-            <div class="col-lg-6 text-light">
-                <div class="card cards border-2 bg-dark">
-                    <h1 class="display-5">come see us</h1>
-                    <img src="{% static 'restaurant.jpg' %}" alt="couldn't find" class="img-fluid">
-                    <div class="content">
-                        <h2>Card One</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin
-                            leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh. Morbi in leo in eros commodo
-                            volutpat ac sed dolor.</p>
-                    </div>
-
-                </div>
-              
-            </div>
-        </div> -->
+ 
 
             <h1 class="display-3 text-light text-center" >Our Staffs</h1>
           <div class="container d-flex align-items-center justify-content-center position-relative flex-wrap">
@@ -199,10 +202,10 @@
     
 
     <section id="contact" class=" m-4 p-5">
-            <div class="container contact text-light m-5 bg-scondary">
+            <div class="container contact text-light m-5">
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="contact-info">
+                    <div class="col-md-3 bg-secondary">
+                        <div class="contact bg-secondary">
                             <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image" />
                             <h2>Contact Us</h2>
                             <h4>We would love to hear from you !</h4>

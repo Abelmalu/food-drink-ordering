@@ -1,20 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
-
-class Customer(models.Model):
-    name = models.CharField(max_length = 255)
-    phone = models.CharField(max_length=255)
-    address = models.CharField(max_length=255)
-
-
-
-    def __str__(self) -> str:
-          return self.name
     
-
-
 
 class Food(models.Model):
 
@@ -56,13 +43,13 @@ class OrderFood(models.Model):
             ('Delivered', 'Delivered'),
 
         )
-        customer = models.ForeignKey(Customer, on_delete=models.CASCADE,null=True)
+        customer = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+        food = models.ForeignKey(Food, on_delete=models.CASCADE)
         quantity = models.PositiveSmallIntegerField()
-        price = models.FloatField()
-        status = models.CharField(max_length=255, choices=STATUS)
+        status = models.BooleanField(default=True)
 
         def __str__(self) -> str:
-          return self.name
+          return self.food.name
 
     
 
@@ -73,13 +60,13 @@ class OrderDrink(models.Model):
             ('Delivered', 'Delivered'),
 
         )
-        customer = models.ForeignKey(Customer, on_delete=models.CASCADE, null=True)
+        customer = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+        Drink = models.ForeignKey(Drink, on_delete=models.CASCADE)
         quantity = models.PositiveSmallIntegerField()
-        price = models.FloatField()
-        status = models.CharField(max_length=255, choices=STATUS)
+        status = models.BooleanField(default=True)
 
         def __str__(self) -> str:
-          return self.name
+          return self.Drink.name
 
     
 

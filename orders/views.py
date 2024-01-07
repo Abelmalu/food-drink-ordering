@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
+from .forms import *
 
 # Create your views here.
 
@@ -14,3 +15,24 @@ def home(request):
     }
     
     return render(request,'orders/index.html',context)
+
+
+
+
+def orders(request):
+    if request.method == 'POST':
+        order =OrderForm(request.POST)
+        if order.is_valid():
+            order.save()
+            return redirect('orders:home')
+
+
+
+
+    form = OrderForm()
+    context = {
+        'form':form
+
+    }
+
+    return render(request, 'orders/order_page.html',context)
