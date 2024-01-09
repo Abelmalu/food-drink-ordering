@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+         <h1 class="text-center">My orders</h1>
+     
+        <div class="container-lg">
+
+            <table class="table table-xxl table table-dark table-striped table-hover p-5 caption-top">
+                <tr>
+                    <th>food</th>
+                    <th>quantity</th>
+                    
+                    <th>Status</th>
+                  
+            
+
+                </tr>
+                {% for order in orders %}
+                <tr class="p-5">
+                   <td>{{order.food}}</td>
+                   <td>{{order.quantity}}</td>
+                   {% if order.status == True %}
+                   <td>delivered</td>
+                   {% else %}
+                   <td>pending</td>
+                   {% endif %}
+                   
+                   
+
+                </tr>
+                {% endfor%}
+
+                {% for order in orders_drink %}
+                <tr class="p-5">
+                   <td>{{order.Drink}}</td>
+                   <td>{{order.quantity}}</td>
+                   {% if order.status == True %}
+                   <td>delivered</td>
+                   {% else %}
+                   <td>pending</td>
+                   {% endif %}
+                   
+                   
+
+                </tr>
+                {% endfor%}
+
+            </table>
+        </div>
+
+
+
+{% endblock %}

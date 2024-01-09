@@ -3,18 +3,26 @@
 
 {% block content %}
 
+<div class="container-fluid text-center mx-5">
+    <h4 class="display-3 text-white text-center">Login</h4>
+    <div class="row justify-content-center ">
+        <div class="col-md-4 col-lg-3">
+            
+            <form action="{% url 'accounts:login' %}" method="POST">
+                {% csrf_token %}
 
-<form action="{% url 'accounts:login' %}" method="POST">
-    {% csrf_token %}
+                <input type="text" name="username" class="form-control m-4" placeholder="useraname">
+                <input type="password" name="password" class="form-control m-4" placeholder="password">
+            <div class="text-center my-4">                  
+                <input type="submit" value="login" class="btn btn-lg btn-success">
+            </div>
 
-    {{form}}
+            </form>
 
-    <input type="submit" value="login">
+        </div>
+    </div>          
+</div>
 
-
-
-
-</form>
 
 
 

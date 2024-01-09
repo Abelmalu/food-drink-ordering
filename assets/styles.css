@@ -265,3 +265,12 @@ a:active {
     	.contact-form button:focus {
     	    box-shadow: none;
     	}
+
+
+
+
+
+                .table tr {
+                    line-height: 50px;
+                    /* Increased for all rows */
+                }

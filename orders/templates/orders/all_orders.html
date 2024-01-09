@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+
+{%  block content %}
+
+<h1 class="text-center">My orders</h1>
+
+<div class="container-lg">
+
+    <table class="table table-xxl table table-dark table-striped table-hover p-5 caption-top">
+        <tr>
+            <td>customer</td>
+            <th>food</th>
+            <th>quantity</th>
+
+            <th>Status</th>
+            
+            <th>complete</th>
+            
+
+
+        </tr>
+        {% for order in ordered_foods %}
+        <tr class="p-5">
+            <td>{{order.customer}}</td>
+            <td>{{order.food}}</td>
+            <td>{{order.quantity}}</td>
+      
+        {% if order.status == True %}
+                <td>delivered</td>
+        
+            
+        {% else %}
+        <td>pending</td>
+        
+        {% endif %}
+            <!-- <td><a href="{% url 'orders:on_road' order.id  %}" class="btn btn-lg btn-success">Send</a></td> -->
+            <td><a href="{% url 'orders:delivered' order.id  %}" class="btn btn-lg btn-success">Complete</a></td>
+
+
+        </tr>
+        {% endfor%}
+
+        {% for order in ordered_drinks %}
+        <tr class="p-5">
+            <td>{{order.customer}}</td>
+            <td>{{order.Drink}}</td>
+            <td>{{order.quantity}}</td>
+
+            {% if order.status == True %}
+            <td>delivered</td>
+            
+            
+            {% else %}
+            <td>pending</td>
+            
+          
+            {% endif  %}
+            <!-- <td><a href="" class="btn btn-lg btn-success">Send</a></td> -->
+            <td><a href="{% url 'orders:on_road' order.id %}" class="btn btn-lg btn-success">Complete</a></td>
+
+
+        </tr>
+        {% endfor%}
+
+    </table>
+
+    {% with name='Malu' %}
+    <h1 class="text-white">{{name}}</h1>
+
+    {% endwith %}
+</div>
+
+
+
+{% endblock  %}

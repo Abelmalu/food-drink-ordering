@@ -10,3 +10,13 @@ class OrderForm(forms.ModelForm):
         exclude = [
             'status','customer'
         ]
+
+
+
+class DrinkForm(forms.ModelForm):
+    class Meta:
+        model = OrderDrink
+        fields = '__all__'
+        exclude = [
+            'status','customer'
+        ]

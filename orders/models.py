@@ -2,6 +2,29 @@ from django.db import models
 from django.contrib.auth.models import User
 
     
+class Customer(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    name = models.CharField(max_length=255, null=True)
+    phone = models.CharField(max_length=255, null=True)
+    email = models.EmailField(max_length=255, null=True)
+    profile_pic = models.ImageField(null=True, blank=True)
+    date_crreated = models.DateTimeField(auto_now_add=True, null=True)
+
+    def __str__(self) -> str:
+        return str(self.user)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class Food(models.Model):
 
@@ -46,7 +69,8 @@ class OrderFood(models.Model):
         customer = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
         food = models.ForeignKey(Food, on_delete=models.CASCADE)
         quantity = models.PositiveSmallIntegerField()
-        status = models.BooleanField(default=True)
+        status = models.BooleanField(default=False)
+        on_road = models.BooleanField(default=False)
 
         def __str__(self) -> str:
           return self.food.name
@@ -63,7 +87,8 @@ class OrderDrink(models.Model):
         customer = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
         Drink = models.ForeignKey(Drink, on_delete=models.CASCADE)
         quantity = models.PositiveSmallIntegerField()
-        status = models.BooleanField(default=True)
+        status = models.BooleanField(default=False)
+        on_road = models.BooleanField(default=False)
 
         def __str__(self) -> str:
           return self.Drink.name
