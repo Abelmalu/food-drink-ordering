@@ -1,30 +1,79 @@
-{% extends 'base.html' %}
 
 
-{% block content %}
 
-<div class="container-fluid text-center mx-5">
-    <h4 class="display-3 text-white text-center">Login</h4>
-    <div class="row justify-content-center ">
-        <div class="col-md-4 col-lg-3">
+
+
+
+
+
+
+
+
+
+
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+
+
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+
+<body class="bg-dark">
+    <section>
+        <div class="container  m-5">
             
-            <form action="{% url 'accounts:login' %}" method="POST">
-                {% csrf_token %}
-
-                <input type="text" name="username" class="form-control m-4" placeholder="useraname">
-                <input type="password" name="password" class="form-control m-4" placeholder="password">
-            <div class="text-center my-4">                  
-                <input type="submit" value="login" class="btn btn-lg btn-success">
+            <div class="row justify-content-center  m-5">
+                <div class="col-md-6 p-5 bg-  border-success border-3 rounded pill ">
+                    <h4 class="display-3 text-white text-center">Login</h4>
+            
+            
+                    <form action="{% url 'accounts:login' %}" method="POST" class="">
+                        {% csrf_token %}
+            
+                        <input type="text" name="username" class="form-control m-4" placeholder="useraname">
+                        <input type="password" name="password" class="form-control m-4" placeholder="pass">
+                        <div class="text-center my-4">
+                            <input type="submit" value="login" class="btn btn-lg btn-success">
+                            <a href="{%  url 'accounts:signup' %}"> SingUp here</a>
+                        </div>
+            
+                    </form>
+            
+                </div>
             </div>
 
-            </form>
 
-        </div>
-    </div>          
-</div>
+        </div>  
+        <!-- container ends here -->
 
 
 
 
 
-{% endblock %}
+
+
+    </section>
+
+
+
+
+  
+
+
+
+
+
+
+
+    </body> 

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'accounts',
     'orders',
     "bootstrap5",
+    'django_filters',
 
 ]
 

@@ -1,12 +1,14 @@
 from django.shortcuts import render,redirect
 from .models import *
 from .forms import *
+from .filters import *
 
 # Create your views here.
 
 
 
 def home(request):
+    
     foods = Food.objects.all().order_by('name')
     drinks = Drink.objects.all().order_by('name')
     context = {

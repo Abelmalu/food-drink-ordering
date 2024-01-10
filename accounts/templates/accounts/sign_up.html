@@ -1,38 +1,58 @@
-{%  extends 'base.html' %}
 
 
 
-{% block content %}
+
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="bg-dark">
 
 
-<form action="{% url 'accounts:signup' %}" method="POST">
-    {% csrf_token %}
-    <div class="container">
-        
-        <div class="row justify-content-center">
-            <div class="col-md-5 col-lg-5">
-                <h1 class=" text-white">SignUp</h1>
-                {{form.username}}<br><br>
-                {{form.password1}}<br><br>
-                {{form.password2}}<br><br>
-                <input type="submit" value="SignUp" class="btn btn-success btn-sm">
-
+    <section>
+        <div class="container text-center m-5 p-5">
+            <form action="{% url 'accounts:signup' %}" method="POST" >
+                {% csrf_token %}
+                <div class="container ">
+            
+                    <div class="row justify-content-center">
+                        <div class="col-md-5 col-lg-5">
+                            <h1 class=" text-white p-5">SignUp</h1>
+                            {{form.username}}<br><br>
+                            {{form.password1}}<br><br>
+                            {{form.password2}}<br><br>
+                            <input type="submit" value="SignUp" class="btn btn-success btn-sm">
+                            <a href="{% url 'accounts:login' %}">have account? login</a>
+            
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="text-center">
             </div>
-        </div>
-    </div>
-  
-    <div class="text-center">
+        
+            </div>
+        
+        
+        
+        
+        
+        
+        
+        </form>
+
+    </section>
+
     
-    </div>
-   
-
-
-   
+</body>
+</html>
 
 
 
-</form>
-
-
-
-{% endblock %}

@@ -6,15 +6,25 @@
 
 
 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col col-md-5 col-lg-4">
+            <h2 class="display-5 text-white ">Enter Your Orders </h2>
+            <form action="{% url 'orders:order' %}" method="post">
+                {% csrf_token %}
+            
+                {{form.as_p}}
+            
+                <input type="submit" value="Order" class="btn btn-success btn-lg">
+            
+            </form>
 
-<h1 class="display-1 ">welcome dreamer</h1>
-<form action="{% url 'orders:order' %}" method="post">
-    {% csrf_token  %}
 
-{{form.as_p}}
 
-<input type="submit" value="submit">
 
-</form>
+        </div>
+    </div>
+</div>
+
 
 {% endblock%}

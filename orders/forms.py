@@ -6,17 +6,31 @@ from django import forms
 class OrderForm(forms.ModelForm):
     class Meta:
         model = OrderFood
-        fields = '__all__'
-        exclude = [
-            'status','customer'
-        ]
+        fields = ['food','quantity']
+       
+        widgets = {
+            'food': forms.Select(attrs={
+                'class': "form-control form-control-lg placeholder='food'  "
+            }),
+            'quantity': forms.TextInput(attrs={
+                'class': "form-control form-control-lg placeholder='food'  "
+            }),
+
+        }
 
 
 
 class DrinkForm(forms.ModelForm):
     class Meta:
         model = OrderDrink
-        fields = '__all__'
-        exclude = [
-            'status','customer'
-        ]
+        fields = ['Drink', 'quantity']
+
+        widgets = {
+            'Drink': forms.Select(attrs={
+                'class': "form-control form-control-lg placeholder='food'  "
+            }),
+            'quantity': forms.TextInput(attrs={
+                'class': "form-control form-control-lg placeholder='food'  "
+            }),
+
+        }
